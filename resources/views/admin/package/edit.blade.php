@@ -1,0 +1,161 @@
+@extends('admin.layouts.main')
+@section('section')
+<main id="main" class="main">
+<section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+      <div class="col-lg-10">
+        <div class="row">
+            @if(Session::has('success'))
+            <p class="alert alert-info">{{ Session::get('success') }}</p>
+            @endif
+            <div class="page-inner">
+                <div class="page-header">
+                    <h4 class="page-title">Edit Package </h4>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="card p-4"> <!-- Added padding inside the card -->
+                            <h4 class="card-title">
+                                Edit Package
+                            </h4>
+                            <div class="row">
+                                <div class="col-12">
+                                    <form class="forms-sample" method="POST" action="{{route('package.update',$package->id)}}">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="row">
+                   
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="name"> name</label>
+                                              <input type="text" class="form-control" id="name" name="name" value="{{$package->name}}" >
+       
+                                              @error('name')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+            
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="price">price</label>
+                                              <input type="text" class="form-control" id="price" name="price" value="{{$package->price}}" >
+       
+                                              @error('profession')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="price">price</label>
+                                              <input type="text" class="form-control" id="price" name="price" value="{{$package->price}}" >
+       
+                                              @error('price')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="service1">service1</label>
+                                              <input type="text" class="form-control" id="service1" name="service1" value="{{$package->service1}}" >
+       
+                                              @error('service1')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="service2">service2</label>
+                                              <input type="text" class="form-control" id="service2" name="service2" value="{{$package->service2}}" >
+       
+                                              @error('profession')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="service3">service3</label>
+                                              <input type="text" class="form-control" id="service3" name="service3" value="{{$package->service3}}" >
+       
+                                              @error('profession')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="service4">service4</label>
+                                              <input type="text" class="form-control" id="service4" name="service4" value="{{$package->service4}}" >
+       
+                                              @error('profession')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="service5">service5</label>
+                                              <input type="text" class="form-control" id="service5" name="service5" value="{{$package->service5}}" >
+       
+                                              @error('profession')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="service6">service6</label>
+                                              <input type="text" class="form-control" id="service6" name="service6" value="{{$package->service6}}" >
+       
+                                              @error('profession')
+                                                <div class="invalid-feedback d-block">
+                                                  {{$message}}
+                                                </div>
+                                              @enderror
+                                            </div>
+                                          </div>
+                                        
+                                      
+            
+                                        </div>
+                                        <div class="d-flex justify-content-center">
+                                            <button type="submit"
+                                              class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                          </div>
+                                      </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+</main>
+@endsection
+
+
